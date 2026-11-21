@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CodeKids.Api</name>
+    </assembly>
+    <members>
+        <member name="M:CodeKids.Api.Controllers.AuthController.Register(CodeKids.Api.DTOs.Auth.RegisterRequestDto)">
+            <summary>
+            Register a new parent account.
+            </summary>
+            <remarks>
+            Sample request:
+            
+                POST /auth/register
+                {
+                   "email": "parent@example.com",
+                   "password": "Password123!",
+                   "pin": "1234",
+                   "language": "en"
+                }
+            
+            </remarks>
+        </member>
+        <member name="M:CodeKids.Api.Controllers.AuthController.Login(CodeKids.Api.DTOs.Auth.LoginRequestDto)">
+            <summary>
+            Login with existing parent email and password.
+            </summary>
+            <remarks>
+            Sample request:
+            
+                POST /auth/login
+                {
+                   "email": "demo@codekids.com",
+                   "password": "Password123!"
+                }
+            
+            </remarks>
+        </member>
+        <member name="M:CodeKids.Api.Controllers.AuthController.VerifyPin(CodeKids.Api.DTOs.Auth.VerifyPinRequestDto)">
+            <summary>
+            Verify parent PIN to obtain a short-lived parent-area token.
+            </summary>
+            <remarks>
+            Requires Bearer authentication. Returns a short-lived (15 min) JWT with claim `parent_area: "true"` needed for `/children/{id}/stats`.
+            
+            Sample request:
+            
+                POST /auth/verify-pin
+                {
+                   "pin": "1234"
+                }
+            
+            </remarks>
+        </member>
+        <member name="M:CodeKids.Api.Controllers.ChildrenController.GetChildren">
+            <summary>
+            Get all child profiles belonging to the authenticated parent.
+            </summary>
+        </member>
+        <member name="M:CodeKids.Api.Controllers.ChildrenController.CreateChild(CodeKids.Api.DTOs.Children.CreateChildRequestDto)">
+            <summary>
+            Create a new child profile for the authenticated parent.
+            </summary>
+            <remarks>
+            Sample request:
+            
+                POST /children
+                {
+                   "name": "Alex",
+                   "age": 10,
+                   "avatarId": "avatar_robot_blue"
+                }
+            
+            </remarks>
+        </member>
+        <member name="M:CodeKids.Api.Controllers.ChildrenController.DeleteChild(System.Guid)">
+            <summary>
+            Delete a child profile. Requires ownership by the authenticated parent.
+            </summary>
+        </member>
+        <member name="M:CodeKids.Api.Controllers.ChildrenController.GetMap(System.Guid)">
+            <summary>
+            Get game map for a child: levels, stages, computed unlock status, flames, streak.
+            </summary>
+            <remarks>
+            Unlocking is dynamically computed:
+            - Level 1 Stage 1 is available initially.
+            - Stage unlocks once the previous stage in the level is completed.
+            - Level unlocks once the last stage of previous level is completed.
+            
+            Returns texts in parent's language with fallback to English.
+            </remarks>
+        </member>
+        <member name="M:CodeKids.Api.Controllers.ChildrenController.GetRewards(System.Guid)">
+            <summary>
+            Get child reward details: flames, streak, 7-day activity, transaction history, badges.
+            </summary>
+        </member>
+        <member name="M:CodeKids.Api.Controllers.ChildrenController.GetStats(System.Guid)">
+            <summary>
+            Get parent area stats for a child: completed stages, flames per day (last 7 days), progress per level.
+            Requires parent PIN token (ParentArea authorization policy).
+            </summary>
+            <remarks>
+            Protected endpoint. Must supply JWT Bearer token obtained from POST /auth/verify-pin.
+            </remarks>
+        </member>
+        <member name="M:CodeKids.Api.Controllers.StagesController.GetStage(System.Guid,System.Guid)">
+            <summary>
+            Get stage content, questions, hint texts, and explanation texts.
+            </summary>
+            <remarks>
+            Rejects locked stages.
+            Returns options and answer objects formatted cleanly according to the question type schema.
+            The Flutter client checks answers locally while server retains anti-cheat authority over rewards and progress.
+            </remarks>
+            <param name="id">The Stage GUID</param>
+            <param name="childId">The Child GUID (must belong to authenticated parent)</param>
+        </member>
+        <member name="M:CodeKids.Api.Controllers.StagesController.PurchaseHint(System.Guid,CodeKids.Api.DTOs.Stages.HintRequestDto)">
+            <summary>
+            Purchase a hint for a question within a stage.
+            </summary>
+            <remarks>
+            Hints cost flames and escalate in price within the same stage for the child:
+            - 1st hint: 100 flames
+            - 2nd hint: 150 flames
+            - 3rd hint: 200 flames (+50 flames each time)
+            
+            If the child does not have sufficient flames, returns 409 Conflict with ProblemDetails.
+            
+            Sample request:
+            
+                POST /stages/{stageId}/hint
+                {
+                   "childId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                   "questionId": "7cb85f64-5717-4562-b3fc-2c963f66afa1"
+                }
+            
+            </remarks>
+        </member>
+        <member name="M:CodeKids.Api.Controllers.StagesController.CompleteStage(System.Guid,CodeKids.Api.DTOs.Stages.CompleteStageRequestDto)">
+            <summary>
+            Mark a stage as completed.
+            </summary>
+            <remarks>
+            Idempotent (calling twice never doubles flames).
+            Executed within a single database transaction (progress, flames, transactions, streak, badges).
+            
+            Rewards:
+            - Explanation: 10 flames
+            - Quiz: 25 flames
+            - Final: 60 flames
+            - Streak bonus: +5 flames per consecutive day (capped at +50)
+            
+            Replaying a completed stage is allowed for practice but grants 0 flames.
+            
+            Sample request:
+            
+                POST /stages/{stageId}/complete
+                {
+                   "childId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                   "hintsUsed": 1,
+                   "attempts": 2
+                }
+            
+            </remarks>
+        </member>
+        <member name="T:CodeKids.Api.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:CodeKids.Api.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CodeKids.Api.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CodeKids.Api.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CodeKids.Api.Services.HintService.CalculateHintCost(System.Int32)">
+            <summary>
+            Computes hint price: 1st = 100, 2nd = 150, 3rd = 200 (+50 each time).
+            </summary>
+        </member>
+        <member name="M:CodeKids.Api.Services.MapService.ComputeMap(System.Collections.Generic.List{CodeKids.Api.Models.Level},System.Collections.Generic.HashSet{System.Guid},System.Collections.Generic.Dictionary{System.Guid,CodeKids.Api.Models.ChildStageProgress})">
+            <summary>
+            Pure computation method for unlocking levels and stages.
+            Unlocking is COMPUTED, never stored.
+            </summary>
+        </member>
+        <member name="M:CodeKids.Api.Services.StreakService.Calculate(System.Int32,System.Nullable{System.DateTime},System.DateTime)">
+            <summary>
+            Pure method for calculating streak days and bonus flames based on UTC dates.
+            Rules:
+            - First day: streak = 1, bonus = 5.
+            - Same day: no change in streak, no second bonus (bonus = 0).
+            - Next consecutive day: streak = streak + 1, bonus = min(streak * 5, 50).
+            - Skipped day: streak resets to 1, bonus = 5.
+            </summary>
+        </member>
+    </members>
+</doc>

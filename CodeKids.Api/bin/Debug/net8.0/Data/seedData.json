@@ -1,0 +1,199 @@
+{
+  "demoParent": {
+    "email": "demo@codekids.com",
+    "password": "Password123!",
+    "pin": "1234",
+    "language": "en"
+  },
+  "demoChild": {
+    "name": "Alex",
+    "age": 10,
+    "avatarId": "avatar_robot_blue"
+  },
+  "badges": [
+    {
+      "name": "First Step",
+      "condition": "FIRST_STAGE",
+      "iconUrl": "https://assets.codekids.app/badges/first_step.png"
+    },
+    {
+      "name": "Quiz Whiz",
+      "condition": "FIRST_QUIZ",
+      "iconUrl": "https://assets.codekids.app/badges/quiz_whiz.png"
+    },
+    {
+      "name": "Level 1 Champion",
+      "condition": "LEVEL_1_COMPLETE",
+      "iconUrl": "https://assets.codekids.app/badges/level1_champ.png"
+    },
+    {
+      "name": "Flame Keeper",
+      "condition": "STREAK_3",
+      "iconUrl": "https://assets.codekids.app/badges/streak_3.png"
+    },
+    {
+      "name": "Fire Master",
+      "condition": "STREAK_7",
+      "iconUrl": "https://assets.codekids.app/badges/streak_7.png"
+    }
+  ],
+  "levels": [
+    {
+      "order": 1,
+      "title": "Instructions",
+      "theme": "Python Basics",
+      "language": "en",
+      "iconUrl": "https://assets.codekids.app/levels/level1_python.png",
+      "stages": [
+        {
+          "order": 1,
+          "type": "Explanation",
+          "title": "Welcome to Python",
+          "rewardFlames": 10,
+          "content": {
+            "title": "Welcome to Python Instructions",
+            "body": "Python is a friendly programming language! Computers follow commands line by line from top to bottom.",
+            "codeExample": "print('Hello, CodeKids!')",
+            "summary": "Use print() to display any message to the screen."
+          },
+          "questions": []
+        },
+        {
+          "order": 2,
+          "type": "Quiz",
+          "title": "First Commands Quiz",
+          "rewardFlames": 25,
+          "content": {
+            "description": "Test your understanding of printing and command execution order."
+          },
+          "questions": [
+            {
+              "type": "Mcq",
+              "text": "Which command displays words on the computer screen in Python?",
+              "options": ["print()", "input()", "show()", "write()"],
+              "answer": { "correct": "print()" },
+              "hintText": "Think of a printer putting words onto paper.",
+              "explanationText": "In Python, print() sends output to the terminal or screen."
+            },
+            {
+              "type": "TrueFalse",
+              "text": "Python runs code from top to bottom, one instruction at a time.",
+              "options": ["True", "False"],
+              "answer": { "correct": "True" },
+              "hintText": "Imagine reading a comic book panel by panel from top to bottom.",
+              "explanationText": "Programs execute sequentially line-by-line starting at the first line."
+            },
+            {
+              "type": "Order",
+              "text": "Arrange these lines so the program greets the player, asks if ready, and finishes.",
+              "options": ["print('Welcome, coder!')", "print('Are you ready?')", "print('Mission complete!')"],
+              "answer": {
+                "order": ["print('Welcome, coder!')", "print('Are you ready?')", "print('Mission complete!')"]
+              },
+              "hintText": "First say welcome, then ask the question, then say mission complete.",
+              "explanationText": "Sequential order means the greeting must come before the ending."
+            },
+            {
+              "type": "FillBlank",
+              "text": "Complete the code to print hi: ____('Hi!')",
+              "options": ["print", "show", "say", "echo"],
+              "answer": { "correct": "print" },
+              "hintText": "The keyword is the standard 5-letter Python display function.",
+              "explanationText": "We write print('Hi!') to call the print function."
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "type": "Quiz",
+          "title": "Variables and Numbers",
+          "rewardFlames": 25,
+          "content": {
+            "description": "Learn how variables store data and how numbers work in Python."
+          },
+          "questions": [
+            {
+              "type": "Mcq",
+              "text": "What will be stored in score after running: score = 10 + 5?",
+              "options": ["15", "105", "10", "5"],
+              "answer": { "correct": "15" },
+              "hintText": "Add 10 and 5 together.",
+              "explanationText": "Python evaluates the right side 10 + 5 = 15, then stores 15 in score."
+            },
+            {
+              "type": "TrueFalse",
+              "text": "Variable names in Python can start with a number, for example: 1player = 10.",
+              "options": ["True", "False"],
+              "answer": { "correct": "False" },
+              "hintText": "Variable names must start with a letter or an underscore.",
+              "explanationText": "Variable names in Python cannot start with a digit. player1 is valid, 1player is not."
+            },
+            {
+              "type": "Order",
+              "text": "Arrange the steps to set gems to 5, collect 3 more, and print total gems.",
+              "options": ["gems = 5", "gems = gems + 3", "print(gems)"],
+              "answer": {
+                "order": ["gems = 5", "gems = gems + 3", "print(gems)"]
+              },
+              "hintText": "Create gems first, add 3, then display the total.",
+              "explanationText": "You must create the variable first before referencing it in calculations or prints."
+            },
+            {
+              "type": "FillBlank",
+              "text": "Set the player's age to 10: ____ = 10",
+              "options": ["age", "var", "let", "val"],
+              "answer": { "correct": "age" },
+              "hintText": "Type the exact variable name 'age'.",
+              "explanationText": "In Python, assign values directly to variable names without extra keywords."
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "type": "Final",
+          "title": "Level 1 Final Test",
+          "rewardFlames": 60,
+          "content": {
+            "description": "Prove you have mastered basic Python instructions, variables, and sequence!"
+          },
+          "questions": [
+            {
+              "type": "Mcq",
+              "text": "What will print(4 * 2) display on screen?",
+              "options": ["8", "42", "6", "Error"],
+              "answer": { "correct": "8" },
+              "hintText": "In Python, the * symbol performs multiplication.",
+              "explanationText": "4 multiplied by 2 equals 8."
+            },
+            {
+              "type": "TrueFalse",
+              "text": "In Python, text strings must always be enclosed in quotes like 'hello' or \"hello\".",
+              "options": ["True", "False"],
+              "answer": { "correct": "True" },
+              "hintText": "Without quotes, Python thinks words are variables or commands.",
+              "explanationText": "Quotes tell Python that the content is plain text (a string)."
+            },
+            {
+              "type": "Order",
+              "text": "Order the instructions to calculate speed and show it.",
+              "options": ["distance = 100", "speed = distance / 2", "print(speed)"],
+              "answer": {
+                "order": ["distance = 100", "speed = distance / 2", "print(speed)"]
+              },
+              "hintText": "First initialize distance, then calculate speed, then print it.",
+              "explanationText": "Each line relies on the variable defined on the previous line."
+            },
+            {
+              "type": "FillBlank",
+              "text": "Which symbol is used to assign a value to a variable? energy ____ 100",
+              "options": ["=", "==", "->", ":="],
+              "answer": { "correct": "=" },
+              "hintText": "A single equality symbol assigns a value.",
+              "explanationText": "The single '=' operator stores the value into the variable."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
