@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\CodeKids.Api.props" />
-</Project>
