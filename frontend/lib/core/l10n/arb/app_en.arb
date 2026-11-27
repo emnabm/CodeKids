@@ -1,0 +1,162 @@
+{
+  "@@locale": "en",
+  "appName": "CodeKids",
+  "tagline": "Play • Learn • Code",
+  "welcomeHeadline": "Learn programming while playing!",
+  "welcomeSubtitle": "Complete levels, earn rewards and become a coding champion!",
+  "getStarted": "Get Started",
+  "login": "Login",
+  "createAccount": "Create Account",
+  "createAccountSubtitle": "Join CodeKids and start your coding adventure",
+  "emailAddress": "Email Address",
+  "password": "Password",
+  "confirmPassword": "Confirm Password",
+  "alreadyHaveAccount": "Already have an account?",
+  "noAccountYet": "Don't have an account?",
+  "orDivider": "OR",
+  "loginTitle": "Welcome Back!",
+  "loginSubtitle": "Log in to continue your coding journey",
+  "choosePinTitle": "Choose your parent PIN",
+  "choosePinSubtitle": "Create a 4-digit PIN to protect the parent progress area",
+  "confirmPinTitle": "Confirm your parent PIN",
+  "confirmPinSubtitle": "Enter the same 4-digit PIN again",
+  "pinMismatchError": "PINs do not match. Please try again.",
+  "enterParentPinTitle": "Enter your PIN",
+  "enterParentPinSubtitle": "Parent verification required to view progress",
+  "pinAttemptsRemaining": "{count} attempts remaining",
+  "@pinAttemptsRemaining": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "pinLockedOut": "Too many wrong attempts. Please wait a moment and try again.",
+  "createChildTitle": "Create Child Profile",
+  "createChildSubtitle": "Let's set up your child's profile",
+  "changeAvatar": "Change Avatar",
+  "chooseAvatarTitle": "Choose an Avatar",
+  "childNameLabel": "Name",
+  "childNameHint": "Emma",
+  "ageLabel": "Age",
+  "programmingLanguageLabel": "Programming Language",
+  "interfaceLanguageLabel": "Interface Language",
+  "nextButton": "Next",
+  "selectChildTitle": "Who is playing?",
+  "selectChildSubtitle": "Choose a child profile or add a new explorer",
+  "addChild": "Add Child",
+  "switchChild": "Switch Child",
+  "deleteChild": "Delete Profile",
+  "deleteChildConfirmTitle": "Delete {name}'s profile?",
+  "@deleteChildConfirmTitle": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "deleteChildConfirmMessage": "This will permanently remove all progress, flames, and badges for this child.",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "confirm": "Confirm",
+  "navMap": "Map",
+  "navRewards": "Rewards",
+  "navChart": "Chart",
+  "navProfile": "Profile",
+  "quizProgress": "Quiz {current} / {total}",
+  "@quizProgress": {
+    "placeholders": {
+      "current": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "validate": "Validate",
+  "gotIt": "Got it",
+  "useHint": "Hint (~{price})",
+  "@useHint": {
+    "placeholders": {
+      "price": { "type": "int" }
+    }
+  },
+  "hintTitle": "Hint",
+  "hintEstimatedCost": "Estimated cost: {price} flames",
+  "@hintEstimatedCost": {
+    "placeholders": {
+      "price": { "type": "int" }
+    }
+  },
+  "hintHiddenPlaceholder": "Tap below to unlock a helpful clue for this question.",
+  "unlockHintButton": "Unlock Hint",
+  "close": "Close",
+  "wrongAnswerTitle": "Incorrect!",
+  "correctAnswerLabel": "Correct answer: {answer}",
+  "@correctAnswerLabel": {
+    "placeholders": {
+      "answer": { "type": "String" }
+    }
+  },
+  "explanationLabel": "Explanation:",
+  "tryAgainLater": "Try again",
+  "correctFeedback": "Awesome! Correct!",
+  "levelCompleteTitle": "Level complete!",
+  "stageCompleteTitle": "Stage complete!",
+  "rewardLabel": "Reward:",
+  "streakBonusLabel": "Streak bonus: +{bonus}",
+  "@streakBonusLabel": {
+    "placeholders": {
+      "bonus": { "type": "int" }
+    }
+  },
+  "currentStreakLabel": "Current streak",
+  "streakDaysCount": "{days} days",
+  "@streakDaysCount": {
+    "placeholders": {
+      "days": { "type": "int" }
+    }
+  },
+  "replayNoFlamesNote": "Practice replay completed! (+0 flames)",
+  "newBadgesEarned": "New badges unlocked!",
+  "continueButton": "Continue",
+  "myRewardsTitle": "My Rewards",
+  "flamesLabel": "Flames",
+  "consecutiveDaysLabel": "Consecutive days",
+  "earnedBadgesTitle": "Earned badges",
+  "noBadgesYet": "Complete stages to earn your first badge!",
+  "viewHistory": "View history",
+  "transactionHistoryTitle": "Flame History",
+  "noTransactionsYet": "No flame transactions yet.",
+  "sevenDayActivityTitle": "7-day activity",
+  "parentProgressTitle": "{name}'s Progress",
+  "@parentProgressTitle": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "rangeSevenDays": "7 days",
+  "completedLabel": "Completed",
+  "levelsLabel": "Levels",
+  "stagesLabel": "Stages",
+  "flamesPerDayTitle": "Flames per day",
+  "levelProgressTitle": "Progress by level",
+  "languageSetting": "Interface Language",
+  "languageContentNote": "App menus update immediately. Lesson content uses the parent account language.",
+  "programmingLanguageSetting": "Programming Language",
+  "settingsItem": "Settings",
+  "aboutItem": "About CodeKids",
+  "aboutDescription": "CodeKids helps kids aged 10+ learn Python programming fundamentals through playful space missions.",
+  "logout": "Log Out",
+  "validationEmailRequired": "Please enter an email address.",
+  "validationEmailInvalid": "Please enter a valid email address.",
+  "validationPasswordRule": "Password must be at least 8 characters with a letter and a digit.",
+  "validationPasswordMismatch": "Passwords do not match.",
+  "validationNameRequired": "Please enter the child's name.",
+  "validationAgeMin": "Age must be 10 or above.",
+  "validationPinLength": "PIN must be exactly 4 digits.",
+  "errorOfflineTitle": "You are offline",
+  "errorOfflineMessage": "Check your internet connection and try again.",
+  "errorGenericTitle": "Oops! Something went wrong",
+  "errorGenericMessage": "We couldn't complete this action right now. Please try again.",
+  "errorUnauthorized": "Your session expired. Please log in again.",
+  "errorForbidden": "You do not have permission to access this.",
+  "errorNotFound": "We couldn't find what you were looking for.",
+  "errorInsufficientFlames": "You don't have enough flames for this hint yet!",
+  "errorValidation": "Please check your inputs and try again.",
+  "retry": "Retry",
+  "loading": "Loading..."
+}

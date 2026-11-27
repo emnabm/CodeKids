@@ -1,0 +1,162 @@
+{
+  "@@locale": "fr",
+  "appName": "CodeKids",
+  "tagline": "Jouer • Apprendre • Coder",
+  "welcomeHeadline": "Apprends à programmer en jouant !",
+  "welcomeSubtitle": "Termine des niveaux, gagne des récompenses et deviens un champion du code !",
+  "getStarted": "Commencer",
+  "login": "Connexion",
+  "createAccount": "Créer un compte",
+  "createAccountSubtitle": "Rejoins CodeKids et commence ton aventure",
+  "emailAddress": "Adresse e-mail",
+  "password": "Mot de passe",
+  "confirmPassword": "Confirmer le mot de passe",
+  "alreadyHaveAccount": "Déjà un compte ?",
+  "noAccountYet": "Pas encore de compte ?",
+  "orDivider": "OU",
+  "loginTitle": "Bon retour !",
+  "loginSubtitle": "Connecte-toi pour continuer ton aventure",
+  "choosePinTitle": "Choisis ton code PIN parent",
+  "choosePinSubtitle": "Crée un code à 4 chiffres pour protéger l'espace parent",
+  "confirmPinTitle": "Confirme ton code PIN",
+  "confirmPinSubtitle": "Saisis à nouveau le même code à 4 chiffres",
+  "pinMismatchError": "Les codes PIN ne correspondent pas. Réessaie.",
+  "enterParentPinTitle": "Saisissez votre PIN",
+  "enterParentPinSubtitle": "Vérification parentale requise pour voir la progression",
+  "pinAttemptsRemaining": "{count} tentatives restantes",
+  "@pinAttemptsRemaining": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "pinLockedOut": "Trop de tentatives incorrectes. Patiente un instant avant de réessayer.",
+  "createChildTitle": "Créer un profil enfant",
+  "createChildSubtitle": "Configurons le profil de ton enfant",
+  "changeAvatar": "Changer d'avatar",
+  "chooseAvatarTitle": "Choisir un avatar",
+  "childNameLabel": "Prénom",
+  "childNameHint": "Emma",
+  "ageLabel": "Âge",
+  "programmingLanguageLabel": "Langage de programmation",
+  "interfaceLanguageLabel": "Langue de l'interface",
+  "nextButton": "Suivant",
+  "selectChildTitle": "Qui joue aujourd'hui ?",
+  "selectChildSubtitle": "Choisis un profil enfant ou ajoutes-en un nouveau",
+  "addChild": "Ajouter un enfant",
+  "switchChild": "Changer d'enfant",
+  "deleteChild": "Supprimer le profil",
+  "deleteChildConfirmTitle": "Supprimer le profil de {name} ?",
+  "@deleteChildConfirmTitle": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "deleteChildConfirmMessage": "Cela supprimera définitivement toute la progression, les flammes et les badges de cet enfant.",
+  "cancel": "Annuler",
+  "delete": "Supprimer",
+  "confirm": "Confirmer",
+  "navMap": "Carte",
+  "navRewards": "Récompenses",
+  "navChart": "Suivi",
+  "navProfile": "Profil",
+  "quizProgress": "Quiz {current} / {total}",
+  "@quizProgress": {
+    "placeholders": {
+      "current": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "validate": "Valider",
+  "gotIt": "J'ai compris",
+  "useHint": "Indice (~{price})",
+  "@useHint": {
+    "placeholders": {
+      "price": { "type": "int" }
+    }
+  },
+  "hintTitle": "Indice",
+  "hintEstimatedCost": "Coût estimé : {price} flammes",
+  "@hintEstimatedCost": {
+    "placeholders": {
+      "price": { "type": "int" }
+    }
+  },
+  "hintHiddenPlaceholder": "Appuie ci-dessous pour débloquer un indice utile pour cette question.",
+  "unlockHintButton": "Utiliser l'indice",
+  "close": "Fermer",
+  "wrongAnswerTitle": "Mauvaise réponse !",
+  "correctAnswerLabel": "Bonne réponse : {answer}",
+  "@correctAnswerLabel": {
+    "placeholders": {
+      "answer": { "type": "String" }
+    }
+  },
+  "explanationLabel": "Explication :",
+  "tryAgainLater": "Réessayer",
+  "correctFeedback": "Bravo ! Bonne réponse !",
+  "levelCompleteTitle": "Niveau terminé !",
+  "stageCompleteTitle": "Stage terminé !",
+  "rewardLabel": "Récompense :",
+  "streakBonusLabel": "Bonus de série : +{bonus}",
+  "@streakBonusLabel": {
+    "placeholders": {
+      "bonus": { "type": "int" }
+    }
+  },
+  "currentStreakLabel": "Série actuelle",
+  "streakDaysCount": "{days} jours",
+  "@streakDaysCount": {
+    "placeholders": {
+      "days": { "type": "int" }
+    }
+  },
+  "replayNoFlamesNote": "Entraînement terminé ! (+0 flamme)",
+  "newBadgesEarned": "Nouveaux badges débloqués !",
+  "continueButton": "Continuer",
+  "myRewardsTitle": "Mes Récompenses",
+  "flamesLabel": "Flammes",
+  "consecutiveDaysLabel": "Jours consécutifs",
+  "earnedBadgesTitle": "Badges obtenus",
+  "noBadgesYet": "Termine des stages pour gagner ton premier badge !",
+  "viewHistory": "Voir l'historique",
+  "transactionHistoryTitle": "Historique des flammes",
+  "noTransactionsYet": "Aucune transaction de flammes pour le moment.",
+  "sevenDayActivityTitle": "Activité sur 7 jours",
+  "parentProgressTitle": "Progression de {name}",
+  "@parentProgressTitle": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "rangeSevenDays": "7 jours",
+  "completedLabel": "Complété",
+  "levelsLabel": "Niveaux",
+  "stagesLabel": "Stages",
+  "flamesPerDayTitle": "Flammes par jour",
+  "levelProgressTitle": "Progression par niveau",
+  "languageSetting": "Langue de l'interface",
+  "languageContentNote": "Les menus changent immédiatement. Le contenu des leçons reste dans la langue du compte parent.",
+  "programmingLanguageSetting": "Langage",
+  "settingsItem": "Paramètres",
+  "aboutItem": "À propos de CodeKids",
+  "aboutDescription": "CodeKids aide les enfants dès 10 ans à apprendre les bases de Python grâce à des missions spatiales ludiques.",
+  "logout": "Se déconnecter",
+  "validationEmailRequired": "Saisis une adresse e-mail.",
+  "validationEmailInvalid": "Saisis une adresse e-mail valide.",
+  "validationPasswordRule": "Minimum 8 caractères avec au moins une lettre et un chiffre.",
+  "validationPasswordMismatch": "Les mots de passe ne correspondent pas.",
+  "validationNameRequired": "Saisis le prénom de l'enfant.",
+  "validationAgeMin": "L'âge doit être d'au moins 10 ans.",
+  "validationPinLength": "Le code PIN doit contenir exactement 4 chiffres.",
+  "errorOfflineTitle": "Hors ligne",
+  "errorOfflineMessage": "Vérifie ta connexion Internet et réessaie.",
+  "errorGenericTitle": "Oups ! Une erreur est survenue",
+  "errorGenericMessage": "Impossible de terminer cette action pour le moment. Réessaie.",
+  "errorUnauthorized": "Ta session a expiré. Reconnecte-toi.",
+  "errorForbidden": "Tu n'as pas l'autorisation d'accéder à cette ressource.",
+  "errorNotFound": "Élément introuvable.",
+  "errorInsufficientFlames": "Tu n'as pas encore assez de flammes pour cet indice !",
+  "errorValidation": "Vérifie les champs saisis et réessaie.",
+  "retry": "Réessayer",
+  "loading": "Chargement..."
+}
